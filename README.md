@@ -70,11 +70,11 @@ select count(distinct customer_id) as total_sale from retail_sales
 select distinct category from retail_sales
 
  
-```
+```sql
  select  * from retail_sales 
  where sale_date = '2022-11-05'
 ```
-``` 
+``` sql
 select 
 category,
 sum(total_sale ) as net_sale,
@@ -82,11 +82,11 @@ count(*)as total_orders
 from retail_sales
 group by 1
 ```
-```
+```sql
 select * from retail_sales
 where total_sale > 1000
 ```
-```
+```sql
 select 
 category,
 gender,
@@ -98,7 +98,7 @@ gender
 order by 1
 ```
 
-```
+```sql
 select 
   extract(year from sale_date) as year,
   extract (month from sale_date) as month,
@@ -116,7 +116,7 @@ select
   ORDER BY 2 DESC
 ```
 
-```
+```sql
 SELECT  
   CATEGORY,
   count(distinct customer_id ) as cnt_unique
