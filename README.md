@@ -22,7 +22,7 @@ cogs float,
 total_sale float);
 ```
 
-##2data exploration and cleaning
+2 data exploration and cleaning
 
 ```sql
 delete  from retail_sales
@@ -48,14 +48,14 @@ cogs is null
 or 
 total_sale is null
 ```
-##Data Analysis & Findings
+3 Data Analysis & Findings
 1 SQL query to retrieve all columns for sales made on '2022-11-05:
  
 ```sql
  select  * from retail_sales 
  where sale_date = '2022-11-05'
 ```
-2 SQL query to calculate the total sales (total_sale) for each category.:
+ SQL query to calculate the total sales (total_sale) for each category.:
 SELECT 
 ``` sql
 select 
@@ -65,12 +65,12 @@ count(*)as total_orders
 from retail_sales
 group by 1
 ```
-3 SQL query to find all transactions where the total_sale is greater than 1000.:
+ SQL query to find all transactions where the total_sale is greater than 1000.:
 ```sql
 select * from retail_sales
 where total_sale > 1000
 ```
-4 SQL query to find the total number of transactions (transaction_id) made by each gender in each category.:
+SQL query to find the total number of transactions (transaction_id) made by each gender in each category.:
 ```sql
 select 
 category,
@@ -82,7 +82,7 @@ category,
 gender
 order by 1
 ```
-5  SQL query to calculate the average sale for each month. Find out best selling month in each year:
+ SQL query to calculate the average sale for each month. Find out best selling month in each year:
 
 ```sql
 select 
