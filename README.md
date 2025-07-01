@@ -3,20 +3,7 @@
 
 
 
-
-Objectives
-Set up a retail sales database: Create and populate a retail sales database with the provided sales data.
-Data Cleaning: Identify and remove any records with missing or null values.
-Exploratory Data Analysis (EDA): Perform basic exploratory data analysis to understand the dataset.
-Business Analysis: Use SQL to answer specific business questions and derive insights from the sales data.
-
-Project Structure
-
-1. Database Setup
-Database Creation
-Table Creation: A table named retail_sales is created to store the sales data. The table structure includes columns for transaction ID, sale date, sale time, customer ID, gender, age, product category, quantity sold, price per unit, cost of goods sold (COGS), and total sale amount.
-
-##retrieve  sales**:
+1 data base creation
 
 ```sql 
 create database sql_project1
@@ -34,6 +21,8 @@ price_per_unit float,
 cogs float,
 total_sale float);
 ```
+
+##2data exploration and cleaning
 
 ```sql
 delete  from retail_sales
@@ -59,21 +48,15 @@ cogs is null
 or 
 total_sale is null
 ```
-
-
-
-
-select count (*) as total_sale from retail_sales
-
-select count(distinct customer_id) as total_sale from retail_sales
-
-select distinct category from retail_sales
-
+##Data Analysis & Findings
+1 SQL query to retrieve all columns for sales made on '2022-11-05:
  
 ```sql
  select  * from retail_sales 
  where sale_date = '2022-11-05'
 ```
+2 SQL query to calculate the total sales (total_sale) for each category.:
+SELECT 
 ``` sql
 select 
 category,
@@ -82,10 +65,12 @@ count(*)as total_orders
 from retail_sales
 group by 1
 ```
+3 SQL query to find all transactions where the total_sale is greater than 1000.:
 ```sql
 select * from retail_sales
 where total_sale > 1000
 ```
+4 SQL query to find the total number of transactions (transaction_id) made by each gender in each category.:
 ```sql
 select 
 category,
@@ -97,6 +82,7 @@ category,
 gender
 order by 1
 ```
+5  SQL query to calculate the average sale for each month. Find out best selling month in each year:
 
 ```sql
 select 
@@ -107,6 +93,7 @@ select
   group by 1,2
   order by 1,3 DESC
 ```
+SQL query to find the top 5 customers based on the highest total sales **:
 ```
   SELECT
   CUSTOMER_ID,
@@ -115,7 +102,7 @@ select
   GROUP BY 1 
   ORDER BY 2 DESC
 ```
-
+SQL query to find the number of unique customers who purchased items from each category.:
 ```sql
 SELECT  
   CATEGORY,
