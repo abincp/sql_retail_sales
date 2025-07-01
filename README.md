@@ -94,7 +94,7 @@ select
   order by 1,3 DESC
 ```
 SQL query to find the top 5 customers based on the highest total sales **:
-```
+```sql
   SELECT
   CUSTOMER_ID,
   SUM(TOTAL_SALE) 
