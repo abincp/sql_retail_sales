@@ -13,11 +13,10 @@ Business Analysis: Use SQL to answer specific business questions and derive insi
 Project Structure
 
 1. Database Setup
-Database Creation: The project starts by creating a database named p1_retail_db.
+Database Creation
 Table Creation: A table named retail_sales is created to store the sales data. The table structure includes columns for transaction ID, sale date, sale time, customer ID, gender, age, product category, quantity sold, price per unit, cost of goods sold (COGS), and total sale amount.
 '''sql
 CREATE DATABASE p1_retail_db;
-
 CREATE TABLE retail_sales
 (
     transactions_id INT PRIMARY KEY,
@@ -39,13 +38,13 @@ Record Count: Determine the total number of records in the dataset.
 Customer Count: Find out how many unique customers are in the dataset.
 Category Count: Identify all unique product categories in the dataset.
 Null Value Check: Check for any null values in the dataset and delete records with missing data.
-'''
+'''sql
 SELECT COUNT(*) FROM retail_sales;
 SELECT COUNT(DISTINCT customer_id) FROM retail_sales;
 SELECT DISTINCT category FROM retail_sales;
 '''
 
-'''
+'''sql
 SELECT * FROM retail_sales
 WHERE 
     sale_date IS NULL OR sale_time IS NULL OR customer_id IS NULL OR 
@@ -63,12 +62,12 @@ WHERE
 
 
  SQL query to retrieve all columns for sales made on '2022-11-05:
- '''
+ '''sql 
 SELECT *
 FROM retail_sales
 WHERE sale_date = '2022-11-05';
 '''
-Write a SQL query to retrieve all transactions where the category is 'Clothing' and the quantity sold is more than 4 in the month of Nov-2022:
+query to retrieve all transactions where the category is 'Clothing' and the quantity sold is more than 4 in the month of Nov-2022:
 SELECT 
   *
 FROM retail_sales
